@@ -26,6 +26,11 @@ development:
         table: "users"
         username_column: "email"
         password_column: "encrypted_password"
+        extra_attributes:
+          school_id: "school_id"
+          house_id: "house_id"
+          first_name: "first_name"
+          last_name: "last_name"
 
 test:
   <<: *defaults

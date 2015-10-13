@@ -136,6 +136,9 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise_cas_authenticatable (1.5.0)
+      devise (>= 1.2.0)
+      rubycas-client (>= 2.2.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
     equalizer (0.0.11)
@@ -324,6 +327,8 @@ GEM
       rspec-mocks (~> 3.3.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
+    rubycas-client (2.3.9)
+      activesupport
     sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -394,6 +399,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   devise
+  devise_cas_authenticatable
   factory_girl_rails
   faker
   guard-rspec

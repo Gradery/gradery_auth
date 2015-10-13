@@ -15,11 +15,32 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  school_id              :integer
+#  house_id               :integer
+#  first_name             :string
+#  last_name              :string
+#  username               :string
+#  password               :string
 #
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :registerable, :recoverable, :rememberable, 
+  		 :trackable, :validatable, :cas_authenticatable
+
+  def cas_extra_attributes=(extra_attributes)
+    extra_attributes.each do |name, value|
+      case name.to_sym
+      when :first_name
+        self.first_name = value
+      when :last_name
+        self.last_name = value
+      when :house_id
+        self.house_id = value
+      when :school_id
+        self.school_id = value
+      end
+    end
+  end
 end

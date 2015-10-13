@@ -39,6 +39,7 @@ gem 'casino-activerecord_authenticator', github: "rbCAS/casino-activerecord_auth
 # ActiveAdmin backend for admins
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'devise_cas_authenticatable'
 
 # Gems for Loggly
 gem 'syslogger', '~> 1.6.0'
