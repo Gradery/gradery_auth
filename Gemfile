@@ -33,7 +33,8 @@ gem "awesome_print"
 gem 'annotate'
 
 # CASino for CAS authentication
-gem 'casino'
+gem 'casino', github: "rbCAS/CASino"
+gem 'casino-activerecord_authenticator', github: "rbCAS/casino-activerecord_authenticator"
 
 # ActiveAdmin backend for admins
 gem 'activeadmin', github: 'activeadmin'

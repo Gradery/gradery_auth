@@ -18,16 +18,14 @@ development:
       authenticator: "ActiveRecord"
       options:
         connection:
-          adapter: "sqlite"
+          adapter: "sqlite3"
           host: "localhost"
           username: ""
           password: ""
-          database: "users"
+          database: "db/development.sqlite3"
         table: "users"
         username_column: "email"
-        password_column: "password"
-        extra_attributes:
-          fullname: "displayname_database_column"
+        password_column: "encrypted_password"
 
 test:
   <<: *defaults

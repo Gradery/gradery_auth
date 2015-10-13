@@ -16,6 +16,33 @@ GIT
       ransack (~> 1.3)
       sass-rails
 
+GIT
+  remote: git://github.com/rbCAS/CASino.git
+  revision: 41d71cd52a423730e5bdeedd9405f35aaaf0d435
+  specs:
+    casino (4.0.2)
+      addressable (~> 2.3)
+      faraday (~> 0.8)
+      grape (~> 0.8)
+      grape-entity (~> 0.4)
+      rails (>= 4.1.0, < 4.3.0)
+      rotp (~> 2.0)
+      rqrcode_png (~> 0.1)
+      sass-rails (>= 4.0.0, < 6.0.0)
+      terminal-table (~> 1.4)
+      useragent (~> 0.4)
+
+GIT
+  remote: git://github.com/rbCAS/casino-activerecord_authenticator.git
+  revision: 122746772f2955ad9b1b448bcecf3301e28e11af
+  specs:
+    casino-activerecord_authenticator (4.0.1)
+      activerecord (>= 4.1.0, < 4.3.0)
+      bcrypt (~> 3.0)
+      casino (>= 3.0.0, < 5.0.0)
+      phpass-ruby (~> 0.1)
+      unix-crypt (~> 1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -86,17 +113,6 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
-    casino (4.0.2)
-      addressable (~> 2.3)
-      faraday (~> 0.8)
-      grape (~> 0.8)
-      grape-entity (~> 0.4)
-      rails (>= 4.1.0, < 4.3.0)
-      rotp (~> 2.0)
-      rqrcode_png (~> 0.1)
-      sass-rails (>= 4.0.0, < 6.0.0)
-      terminal-table (~> 1.4)
-      useragent (~> 0.4)
     chunky_png (1.3.4)
     codeclimate-test-reporter (0.4.8)
       simplecov (>= 0.7.1, < 1.0.0)
@@ -228,6 +244,7 @@ GEM
       rack
       rake (>= 0.8.1)
     pg (0.18.3)
+    phpass-ruby (0.1.2)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     pry (0.10.2)
@@ -350,6 +367,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unix-crypt (1.3.0)
     useragent (0.16.1)
     virtus (1.0.5)
       axiom-types (~> 0.1)
@@ -371,7 +389,8 @@ DEPENDENCIES
   capistrano-passenger
   capistrano-rails (~> 1.1)
   capistrano-rvm
-  casino
+  casino!
+  casino-activerecord_authenticator!
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   devise
