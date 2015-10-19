@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record in dev, Postgres in production
 gem 'pg'
 gem 'sqlite3'
@@ -19,12 +19,18 @@ gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Use Toastr for notifications
+gem 'toastr-rails'
+# set up in-place editing
+gem 'bootstrap-editable-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# FontAwesome for icons
+gem 'font-awesome-rails'
 
 #debug helper
 gem "awesome_print"
@@ -36,6 +42,10 @@ gem 'annotate'
 gem 'casino', github: "rbCAS/CASino"
 gem 'casino-activerecord_authenticator', github: "rbCAS/casino-activerecord_authenticator"
 
+# paperclip for file upload for logos
+gem 'paperclip'
+# Twitter Bootstrap
+gem 'bootstrap-sass', '~> 3.3.4'
 # ActiveAdmin backend for admins
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'

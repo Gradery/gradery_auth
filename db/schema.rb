@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013020353) do
+ActiveRecord::Schema.define(version: 20151019032055) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -146,6 +146,46 @@ ActiveRecord::Schema.define(version: 20151013020353) do
 
   add_index "casino_users", ["authenticator", "username"], name: "index_casino_users_on_authenticator_and_username", unique: true
 
+  create_table "grades", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+  end
+
+  create_table "grades_users", force: :cascade do |t|
+    t.integer  "grade_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.text     "permissions"
+    t.datetime "deleted_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "roles_users", force: :cascade do |t|
+    t.integer  "role_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.text     "about"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "location"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -160,10 +200,9 @@ ActiveRecord::Schema.define(version: 20151013020353) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "school_id"
-    t.integer  "house_id"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "username"
+    t.datetime "deleted_at"
     t.string   "password"
   end
 
