@@ -41,7 +41,8 @@ RSpec.describe User, type: :model do
 		u = FactoryGirl.create(:user)
 		params = {
 			"first_name" => "Test",
-			"last_name" => "User"
+			"last_name" => "User",
+			"password" => ""
 		}
 		u.update_without_password(params)
 		expect(u.first_name).to eq "Test"
