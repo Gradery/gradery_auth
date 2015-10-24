@@ -11,8 +11,8 @@
 
 FactoryGirl.define do
   factory :grades_user do
-    grades ""
-user_id 1
+    grade
+	user
   end
 
 end

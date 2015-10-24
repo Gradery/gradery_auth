@@ -24,5 +24,27 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+	it "adds CAS attributes" do
+		extra_attributes = {
+			:first_name => "Test",
+			:last_name => "User",
+			:school_id => 2,
+		}
+		u = User.new
+		u.cas_extra_attributes = extra_attributes
+		expect(u.first_name).to eq "Test"
+		expect(u.last_name).to eq "User"
+		expect(u.school_id).to eq 2
+	end
+
+	it "allows update without password" do
+		u = FactoryGirl.create(:user)
+		params = {
+			"first_name" => "Test",
+			"last_name" => "User"
+		}
+		u.update_without_password(params)
+		expect(u.first_name).to eq "Test"
+		expect(u.last_name).to eq "User"
+	end
 end

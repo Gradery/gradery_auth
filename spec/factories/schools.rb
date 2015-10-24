@@ -14,10 +14,10 @@
 
 FactoryGirl.define do
   factory :school do
-    name "MyString"
-url "MyString"
-about "MyText"
-deleted_at "2015-10-18 15:57:59"
+    name { Faker::Name.name }
+	url { Faker::Internet.domain_word }
+	about { Faker::Lorem.paragraph }
+	location { Faker::Address.city }
   end
 
 end

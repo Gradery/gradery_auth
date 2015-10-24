@@ -12,9 +12,8 @@
 
 FactoryGirl.define do
   factory :role do
-    name "MyString"
-permissions "MyText"
-deleted_at "2015-10-18 16:04:07"
+    name { Faker::Name.name }
+	permissions { Faker::Name.name }
   end
 
 end

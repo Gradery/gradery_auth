@@ -12,8 +12,8 @@
 
 FactoryGirl.define do
   factory :grade do
-    name "MyString"
-school_id 1
+    name { Faker::Name.name }
+	school
   end
 
 end

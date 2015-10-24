@@ -43,8 +43,6 @@ class User < ActiveRecord::Base
         self.first_name = value
       when :last_name
         self.last_name = value
-      when :house_id
-        self.house_id = value
       when :school_id
         self.school_id = value
       end
